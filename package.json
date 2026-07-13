@@ -1,0 +1,9 @@
+{
+  "name": "wifa-chat-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modern streaming chat interface for the Wirtschaftswissenschaftliche Fakultät der Universität Leipzig",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

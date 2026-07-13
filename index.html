@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiFa Assist</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta
+      name="description"
+      content="Moderner Chat-Assistent für die Wirtschaftswissenschaftliche Fakultät der Universität Leipzig."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" hidden></div>
+    <div class="shell">
+      <aside class="hero-card" id="sidebar">
+        <div class="mobile-panel-head">
+          <span>Menü</span>
+          <button
+            class="mobile-close-button"
+            id="mobileCloseButton"
+            type="button"
+            aria-label="Menü schließen"
+          >
+            Schließen
+          </button>
+        </div>
+        <div class="brand-lockup">
+          <img
+            class="brand-logo"
+            src="https://www.wifa.uni-leipzig.de/_assets/89f4369f29e16b23ff4835f5790afe07/Images/Icons/uni_leipzig_logo_v2.svg"
+            alt="Logo Universität Leipzig"
+          />
+        </div>
+        <p class="eyebrow">Universität Leipzig</p>
+        <h1>WiFa Assist</h1>
+        <p class="hero-copy">
+          Ein schneller Studien- und Service-Chat für Fragen rund um die
+          Wirtschaftswissenschaftliche Fakultät.
+        </p>
+
+        <section class="history-panel">
+          <div class="history-header">
+            <span>Schnellzugriff</span>
+            <p>Wichtige Uni-Tools direkt öffnen.</p>
+          </div>
+          <div class="quick-links">
+            <a
+              class="quick-link"
+              href="https://almaweb.uni-leipzig.de/?fb_locale=de_DE"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="quick-link-icon" aria-hidden="true">A</span>
+              <span class="quick-link-label">AlmaWeb</span>
+            </a>
+            <a
+              class="quick-link"
+              href="https://moodle2.uni-leipzig.de/login/index.php"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="quick-link-icon" aria-hidden="true">M</span>
+              <span class="quick-link-label">Moodle</span>
+            </a>
+            <a
+              class="quick-link"
+              href="https://www.wifa.uni-leipzig.de/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="quick-link-icon" aria-hidden="true">W</span>
+              <span class="quick-link-label">WiFa-Seite</span>
+            </a>
+          </div>
+
+          <div class="history-header">
+            <span>Verläufe</span>
+            <p>Bis zu drei letzte Unterhaltungen direkt wieder öffnen.</p>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </section>
+      </aside>
+
+      <main class="chat-card">
+        <header class="chat-header">
+          <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            Menü
+          </button>
+          <div>
+            <p class="chat-kicker">Wirtschaftswissenschaftliche Fakultät</p>
+            <h2>Frag die Fakultät</h2>
+            <p class="session-note" id="sessionNote"></p>
+          </div>
+          <button class="ghost-button" id="resetButton" type="button">
+            Neue Unterhaltung
+          </button>
+        </header>
+
+        <section class="messages" id="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              Hallo! Ich unterstütze dich bei Fragen zur
+              Wirtschaftswissenschaftlichen Fakultät der Universität Leipzig.
+              Was möchtest du wissen?
+            </div>
+          </article>
+        </section>
+
+        <form class="composer" id="chatForm">
+          <label class="composer-label" for="messageInput">
+            Nachricht
+          </label>
+          <div class="composer-row">
+            <textarea
+              id="messageInput"
+              rows="1"
+              maxlength="4000"
+              placeholder="Stell eine Frage zu Studium, Organisation oder Angeboten der Fakultät …"
+            ></textarea>
+            <button class="send-button" id="sendButton" type="submit">
+              Senden
+            </button>
+          </div>
+          <p class="composer-disclaimer">
+            KI-Hinweis: Antworten werden automatisiert erzeugt und können unvollständig oder fehlerhaft sein. Sie dienen der Orientierung, orientieren sich an der Verwaltungspraxis und den geltenden Ordnungen, sind aber rechtlich nicht bindend.
+          </p>
+        </form>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
